@@ -1,41 +1,77 @@
-# DYODE. Dev Challenges
-
 ## Liquid Challenge
 
-#### These questions should be answered with real world solutions in liquid
-
 1. Describe how you would make a line of text in a homepage section editable from theme customization and how you would access this in liquid.
+
+   ```
+   <span>{{ section.settings.homepage_text }}</span>
+
+   {% schema %}
+      {
+        "name": "Homepage Section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "homepage_text",
+                "label": "Homepage Text"
+            }
+        ]
+      }
+   {% endschema %}
+
+   ```
+
 2. How would you add the collection featured image as a banner on the collection liquid template?
+   This would depend on if I should load it as a background image or an image element. Either way, to get the right image from liquid, I would use `collection.featured_image`.
+
 3. Using liquid code and HTML, create a simple pagination container, "< 1 2 ... 5 >".
+
+   ```
+   {% paginate collection.products by 5 %}
+
+     <div>
+       {% if paginate.previous.is_link %}
+         <a href="{{ paginate.previous.url }}">{{ paginate.previous.title }}</a>
+       {% endif %}
+       {% if paginate.next.is_link %}
+         <a href="{{ paginate.next.url }}">{{ paginate.next.title }}</a>
+       {% endif %}
+     </div>
+   {% endpaginate %}
+   ```
+
 4. Using liquid code, access the product named "Blue T-Shirt". Store the id, title, handle, price, url, and image in variables.
+
+   ```
+   {% for p in collections["all-products"].products %}
+     {% if p.title == 'Blue T-Shirt' %}
+       {% assign product = p %}
+     {% endif %}
+   {% endfor %}
+
+   {% assign id = product.id %}
+   {% assign title = product.title %}
+   {% assign handle = product.handle %}
+   {% assign price = product.price %}
+   {% assign url = product.url %}
+   {% assign image = product.featured_image %}
+
+   ```
+
 5. Using liquid code, create a key:value array using the list below. Loop through the array. Upon key type, store the value in a variable to be used later:
+
    - fruit:apple
    - vegetable:carrot
    - cloth:t-shirt
    - denim:jeans
 
-## Frontend Challenge
+   Assuming the above is in a variable called 'string'.
 
-Once you complete the challenge, you'll:
+   ```
+   {% assign list = string | newline_to_br | replace: '-', '', | replace: ' ', '' | split: '<br />' %}
+   {% for obj in list %}
+     {% assign key = obj | split: ':' | first %}
+     {% assign value = obj | split: ':' | last %}
 
-- You send us a github link to your repo and a public preview URL for quick access
-  - Heroku, Netlify, GitHub pages are some free options for hosting
-- We'll run `yarn install` and `yarn start` to view your result
-
-### The Test
-
-- Use a javascript framework to build out what you see in [this Figma link](https://www.figma.com/file/3LB4kjUhhXVN1cBU2QPIpu/DYODE-Developer-Test?node-id=0%3A1).
-  - Acceptable frameworks: React, Next, Gatsby, Vue, Nuxt
-- This should be built responsive using the mobile first philosophy.
-- It contains two carousels, a hero carousel and a product carousel.
-- Please find a good responsive carousel dependency to use.
-- Please refrain from using any responsive libraries ie: Bootstrap, Material Ui, Foundation.
-
-#### What we're looking for:
-
-- How closely it resembles the original design
-- How you organize your components
-- Reusability
-- How well your elements scale responsively
-- An understanding of what the mobile first philosophy means
-- A separation between javascript and scss.
+     {{ value }}
+   {% endfor %}
+   ```

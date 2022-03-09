@@ -1,0 +1,92 @@
+.newsletter {
+  height: 239px;
+  background: #10504f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 750px) {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .newsletter__info {
+    text-align: center;
+    color: white;
+    padding: 25px 0;
+
+    @media (min-width: 750px) {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 10%;
+    }
+
+    .title {
+      font-family: Pacifico;
+      font-size: 20px;
+      margin-bottom: 11px;
+
+      @media (min-width: 750px) {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 40px;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    .description {
+      margin-top: 23px;
+      font-size: 13px;
+      padding: 0 30px;
+      line-height: 17px;
+
+      @media (min-width: 750px) {
+        display: block;
+        margin-top: 0;
+        align-self: center;
+        width: 50%;
+        font-size: 22px;
+        line-height: 25px;
+      }
+    }
+
+    .subscribe-form {
+      width: 50%;
+
+      input {
+        width: calc(100% - 155px);
+        margin-right: 10px;
+        padding: 15px 25px;
+
+        @media (max-width: 1000px) {
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .cta {
+    width: 40%;
+    margin: 0 auto 18px auto;
+
+    @media (min-width: 750px) {
+      width: 140px;
+    }
+  }
+}

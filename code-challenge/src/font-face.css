@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/Pacifico.ttf");
+}
+
+* {
+  font-family: Lato;
+}

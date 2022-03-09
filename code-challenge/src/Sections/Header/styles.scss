@@ -1,0 +1,43 @@
+@import "./styles/PromoBar.scss";
+@import "./styles/MobileNav.scss";
+@import "./styles/DesktopNav.scss";
+@import "./styles/UserIcons.scss";
+
+.header {
+  font-family: Lato;
+  background-color: #10504f;
+
+  .navigation {
+    height: 62px;
+    color: white;
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__left {
+      width: 50%;
+      display: flex;
+
+      @media (min-width: 750px) {
+        width: 20%;
+      }
+
+      .site-logo {
+        padding: 10px 0px 6px 25px;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+    &__right {
+      width: 50%;
+
+      @media (min-width: 750px) {
+        width: 20%;
+      }
+    }
+  }
+}

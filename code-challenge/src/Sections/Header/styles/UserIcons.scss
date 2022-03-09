@@ -1,0 +1,11 @@
+.user-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 10px;
+
+    &__icon {
+        margin: 0 9px;
+    }
+}
