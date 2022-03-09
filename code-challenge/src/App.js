@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // styles
-import "./reset.css";
 import "./App.scss";
 
-// components
+// global components
 import Header from "./Sections/Header";
 import Footer from "./Sections/Footer";
 
