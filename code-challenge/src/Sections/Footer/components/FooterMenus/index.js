@@ -39,7 +39,9 @@ const Menu = (props) => {
           <h4 className="title">{menu.title}</h4>
           <ul className="menu">
             {menu.links.map((link) => (
-              <li>{link.title}</li>
+              <li>
+                <a href={link.link}>{link.title}</a>
+              </li>
             ))}
           </ul>
         </div>
@@ -54,7 +56,9 @@ const SocialIcons = (props) => {
       <span className="title">{props.socialIcons.title}</span>
       <div className="footer-menus__social-icons">
         {props.socialIcons.icons.map((icon) => (
-          <img alt={icon.alt} src={icon.src} />
+          <a href={icon.link}>
+            <img alt={icon.alt} src={icon.src} />
+          </a>
         ))}
       </div>
     </div>
