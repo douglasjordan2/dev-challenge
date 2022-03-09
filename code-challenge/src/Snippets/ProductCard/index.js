@@ -1,7 +1,7 @@
 import "./styles.scss";
 
 function ProductCard(props) {
-  const { src, title, collection, product_type, price } = props.product;
+  const { src, title, collection, product_type, price, link } = props.product;
 
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -10,7 +10,7 @@ function ProductCard(props) {
   }).format(price / 100);
 
   return (
-    <div className="product-card">
+    <a className="product-card" href={link}>
       <img alt={title} className="product-card__image" src={src} />
       <div className="product-card__info">
         <span className="title">{title}</span>
@@ -19,7 +19,7 @@ function ProductCard(props) {
         </span>
         <span className="price">{formattedPrice}</span>
       </div>
-    </div>
+    </a>
   );
 }
 

@@ -62,6 +62,7 @@ const productSlider = {
       collection: "Women's",
       product_type: "t-shirt",
       price: "1999",
+      link: "#",
     },
     {
       src: prodimage2,
@@ -69,6 +70,7 @@ const productSlider = {
       collection: "Women's",
       product_type: "t-shirt",
       price: "1999",
+      link: "#",
     },
     {
       src: prodimage3,
@@ -76,6 +78,7 @@ const productSlider = {
       collection: "Women's",
       product_type: "t-shirt",
       price: "1999",
+      link: "#",
     },
     {
       src: prodimage4,
@@ -83,6 +86,7 @@ const productSlider = {
       collection: "Women's",
       product_type: "t-shirt",
       price: "1999",
+      link: "#",
     },
   ],
 };
